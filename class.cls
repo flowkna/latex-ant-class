@@ -1,9 +1,14 @@
-\ProvidesClass{class}[2013/04/08 v 0.1 class]
+\ProvidesClass{Styles/class}[2013/04/08 v 0.1 class]
 \LoadClassWithOptions{article}
+<<<<<<< HEAD
 
  \usepackage[ngerman]{babel} % Neue deutsche Rechnschreibung
+=======
+ 
+\usepackage[ngerman]{babel} % Neue deutsche Rechnschreibung
+>>>>>>> Zeug
 \usepackage{tgheros} % Nutze Fontbase tghereos
- \usepackage{fontspec} % Provide features for AAT and OpenType fonts
+\usepackage{fontspec} % Provide features for AAT and OpenType fonts
 
 \usepackage{titlesec}
 
@@ -16,11 +21,10 @@
 \usepackage{hyperref}
 
 
-
-% automatisch Labels für die Section erzeugen -> braucht man um im text darauf zu referenzieren 
+%% automatisch Labels für die Section erzeugen -> braucht man um im text darauf zu referenzieren 
 \usepackage{letltxmacro}
 \usepackage{etoolbox}
-
+%
 \LetLtxMacro{\origsection}{\section}
 \renewcommand{\section}[2][]{
   \ifstrempty{#1}{\origsection{#2}}{\origsection[#1]{#2}}  % only use optional arg if it is set 

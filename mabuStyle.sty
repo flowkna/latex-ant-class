@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 \ProvidesPackage{mabuStyle}[2013/04/08 v0.1 style]
+=======
+\ProvidesPackage{Styles/mabuStyle}[2013/04/08 v0.1 style]
+>>>>>>> Zeug
 
 %%%%% \setcounter{SectionCount}{1}     % number chapters 
 %\makeindex
@@ -36,10 +40,18 @@
 %\pagestyle{fancy}
 
 
-
 \setcounter{tocdepth}{4}  % = Aufnahme in das Inhaltsverzeichnis *
 \setcounter{secnumdepth}{4}  % = Nummerierung vertiefen *
 
+% Style für InhaltsVZ
+
+\usepackage{tocloft}
+
+\renewcommand\cftsecfont{\normalfont}
+\renewcommand\cftsecpagefont{\normalfont}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftsecdotsep}}
+\renewcommand\cftsecdotsep{\cftdot}
+\renewcommand\cftsubsecdotsep{\cftdot}
 
 
 % Style für InhaltsVZ
