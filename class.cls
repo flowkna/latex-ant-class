@@ -1,12 +1,9 @@
-\ProvidesClass{Styles/class}[2013/04/08 v 0.1 class]
+\ProvidesClass{class}[2013/04/08 v 0.1 class]
 \LoadClassWithOptions{article}
-<<<<<<< HEAD
 
- \usepackage[ngerman]{babel} % Neue deutsche Rechnschreibung
-=======
- 
 \usepackage[ngerman]{babel} % Neue deutsche Rechnschreibung
->>>>>>> Zeug
+
+
 \usepackage{tgheros} % Nutze Fontbase tghereos
 \usepackage{fontspec} % Provide features for AAT and OpenType fonts
 
