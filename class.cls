@@ -1,6 +1,6 @@
 \ProvidesClass{class}[2013/04/08 v 0.1 class]
 \LoadClassWithOptions{article}
-%test 
+
  \usepackage[ngerman]{babel} % Neue deutsche Rechnschreibung
 \usepackage{tgheros} % Nutze Fontbase tghereos
  \usepackage{fontspec} % Provide features for AAT and OpenType fonts
