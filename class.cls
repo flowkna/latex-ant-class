@@ -64,3 +64,8 @@
 
 
 
+\newcommand{\erstbetreuer}[1]{\newcommand{\varErstbetreuer}{#1}}
+\newcommand{\zweitbetreuer}[1]{\newcommand{\varZweitbetreuer}{#1}}
+ 
+
+
