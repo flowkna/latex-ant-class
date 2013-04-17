@@ -63,9 +63,11 @@
 
 
 
+\newcommand{\varErstbetreuer}{*** FEHLER: \textbackslash erstebetreuer\{\} nicht gesetzt ***}
+\newcommand{\varZweitbetreuer}{*** FEHLER: \textbackslash zweitbetreuer\{\} nicht gesetzt ***}
 
-\newcommand{\erstbetreuer}[1]{\newcommand{\varErstbetreuer}{#1}}
-\newcommand{\zweitbetreuer}[1]{\newcommand{\varZweitbetreuer}{#1}}
+\newcommand{\erstbetreuer}[1]{\renewcommand{\varErstbetreuer}{#1}}
+\newcommand{\zweitbetreuer}[1]{\renewcommand{\varZweitbetreuer}{#1}}
  
 
 
