@@ -1,77 +1,85 @@
 \ProvidesClass{class}[2013/04/08 v 0.1 class]
 \LoadClassWithOptions{article}
 
-\usepackage[ngerman]{babel} % Neue deutsche Rechnschreibung
-
-
-\usepackage{tgheros} % Nutze Fontbase tghereos
-\usepackage{fontspec} % Provide features for AAT and OpenType fonts
-
-\usepackage{titlesec}
-
-\usepackage{fancyhdr}
+% Setze Papiergröße auf A4
 \usepackage[a4paper]{geometry}
 
-\usepackage{epstopdf} % Import EPS Images
+% Neue deutsche Rechnschreibung
+\usepackage[ngerman]{babel} 
+
+% Nutze Fontbase tghereos
+\usepackage{tgheros} 
+
+% Provide features for AAT and OpenType fonts
+\usepackage{fontspec}
+
+% Paket für erweiterte sections—namely titles, headers und contents.
+\usepackage{titlesec}
+
+% Wie der Name sagt, Fancy Headers
+\usepackage{fancyhdr}
+
+% Ermöglicht das importieren von EPS Bilder
+\usepackage{epstopdf} 
+
+% Ermöglicht das Definieren der Zeilenabstände
 \usepackage{setspace}
 
-
-%% by Martin
-
+% Formatierung für Links aller Art
 \usepackage{hyperref}
 
-
-%% automatisch Labels für die Section erzeugen -> braucht man um im text darauf zu referenzieren 
+% Automatische Labels für die Section erzeugen, um Text auf diese referenzieren zu können 
 \usepackage{letltxmacro}
+
+% Ermöglicht das Überschreiben von sog. "Kernel-Commands" von Latex
 \usepackage{etoolbox}
-%
+
+% Mappen von Überschriften auf Labels 
+% Begin
 \LetLtxMacro{\origsection}{\section}
 \renewcommand{\section}[2][]{
   \ifstrempty{#1}{\origsection{#2}}{\origsection[#1]{#2}}  % only use optional arg if it is set 
   \label{section:#2}
   \ifstrempty{#1}{}{\label{secShort:#1}} % only set label for shortRef 
 }
-
+%
 \LetLtxMacro{\origsubsection}{\subsection}
 \renewcommand{\subsection}[2][]{
   \ifstrempty{#1}{\origsubsection{#2}}{\origsubsection[#1]{#2}}  % only use optional arg if it is set 
   \label{subsection:#2}
   \ifstrempty{#1}{}{\label{subsection_short:#1}} % only set label for shortRef 
 }
-
+%
 \LetLtxMacro{\origsubsubsection}{\subsubsection}
 \renewcommand{\subsubsection}[2][]{
   \ifstrempty{#1}{\origsubsubsection{#2}}{\origsubsubsection[#1]{#2}}  % only use optional arg if it is set 
   \label{subsubsection:#2}
   \ifstrempty{#1}{}{\label{subsubsection_short:#1}} % only set label for shortRef 
 }
-
-
+%
 \LetLtxMacro{\origparagraph}{\paragraph}
 \renewcommand{\paragraph}[2][]{
   \ifstrempty{#1}{\origparagraph{#2}}{\origparagraph[#1]{#2}}  % only use optional arg if it is set 
   \label{paragraph:#2}
   \ifstrempty{#1}{}{\label{paragraph_short:#1}} % only set label for shortRef 
 }
-
- 
+%
 \LetLtxMacro{\origsubparagraph}{\subparagraph}
 \renewcommand{\subparagraph}[2][]{
   \ifstrempty{#1}{\origsubparagraph{#2}}{\origsubparagraph[#1]{#2}}  % only use optional arg if it is set 
   \label{subparagraph:#2}
   \ifstrempty{#1}{}{\label{subparagraph_short:#1}} % only set label for shortRef 
 }
+% End
 
-
-
-
-
+% Definition von Variablen
 \newcommand{\varErstbetreuer}{*** FEHLER: \textbackslash erstebetreuer\{\} nicht gesetzt ***}
 \newcommand{\varZweitbetreuer}{*** FEHLER: \textbackslash zweitbetreuer\{\} nicht gesetzt ***}
 \newcommand{\varMatrikelnr}{*** FEHLER: \textbackslash matrikelnummer\{\} nicht gesetzt ***}
 \newcommand{\varStudiengang}{*** FEHLER: \textbackslash Studiengang\{\} nicht gesetzt ***}
 \newcommand{\varHochschule}{*** FEHLER: \textbackslash Hochschule\{\} nicht gesetzt ***}
 
+% Setzen der Variablen
 \newcommand{\erstbetreuer}[1]{\renewcommand{\varErstbetreuer}{#1}}
 \newcommand{\zweitbetreuer}[1]{\renewcommand{\varZweitbetreuer}{#1}}
 \newcommand{\matrikelnr}[1]{\renewcommand{\varMatrikelnr}{#1}} 

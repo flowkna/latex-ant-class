@@ -1,46 +1,22 @@
 \ProvidesPackage{mabuStyle}[2013/04/08 v0.1 style]
 
-%%%%% \setcounter{SectionCount}{1}     % number chapters 
-%\makeindex
-
-%-setze Zeilenabstand auf 1,3 
+% Setze Zeilenabstand auf 1,3 
 \linespread{1.3}
 
-% Itemize line space
-%\let\olditemize=\itemize
-%\def\itemize{\olditemize\setlength{\itemsep}{-0.5ex}}
-
-% Define Helvetica Neue Light as default font 
+% Setze Helvetica Neue Light als Standard-Schriftart 
 \setmainfont{Helvetica Neue Light} 
 
-% Start every section on a new page
-%\let\stdsection\section
-%\renewcommand\section{\newpage\stdsection}
-
-%\renewcommand\section{\newpage\arabic{SectionCount}\stdsection}
-
-%\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{50pt}{\Huge}
-
-
-%\titleformat{\section}[hang] 
-%{\normalfont\large\bfseries}{\sectiontitlename\ \thesection}{1em}{} 
-
+% Setze die Kapitelnamen auf Rechts im Header
 \rhead{\nouppercase{\leftmark}}
 
-% Turn abstract into Executive Summary
-%\renewcommand{\abstractname}{Executive Summary}
+% Aufnahme in das Inhaltsverzeichnis *
+\setcounter{tocdepth}{4}  
 
-%\thispagestyle{empty}
+% = Nummerierung vertiefen *
+\setcounter{secnumdepth}{4}  
 
-% Use fancyhdr
-%\pagestyle{fancy}
-
-
-\setcounter{tocdepth}{4}  % = Aufnahme in das Inhaltsverzeichnis *
-\setcounter{secnumdepth}{4}  % = Nummerierung vertiefen *
-
-% Style für InhaltsVZ
-
+% Definiere Styles für das Inhaltsverzeichnis
+% Begin
 \usepackage{tocloft}
 
 \renewcommand\cftsecfont{\normalfont}
@@ -48,18 +24,4 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftsecdotsep}}
 \renewcommand\cftsecdotsep{\cftdot}
 \renewcommand\cftsubsecdotsep{\cftdot}
-
-
-% Style für InhaltsVZ
-
-\usepackage{tocloft}
-
-\renewcommand\cftsecfont{\normalfont}
-\renewcommand\cftsecpagefont{\normalfont}
-\renewcommand{\cftsecleader}{\cftdotfill{\cftsecdotsep}}
-\renewcommand\cftsecdotsep{\cftdot}
-\renewcommand\cftsubsecdotsep{\cftdot}
-
-
-
-
+% End
