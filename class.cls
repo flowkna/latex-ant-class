@@ -75,9 +75,9 @@
 % Definition von Variablen
 \newcommand{\varErstbetreuer}{*** FEHLER: \textbackslash erstebetreuer\{\} nicht gesetzt ***}
 \newcommand{\varZweitbetreuer}{*** FEHLER: \textbackslash zweitbetreuer\{\} nicht gesetzt ***}
-\newcommand{\varMatrikelnr}{*** FEHLER: \textbackslash matrikelnummer\{\} nicht gesetzt ***}
-\newcommand{\varStudiengang}{*** FEHLER: \textbackslash Studiengang\{\} nicht gesetzt ***}
-\newcommand{\varHochschule}{*** FEHLER: \textbackslash Hochschule\{\} nicht gesetzt ***}
+\newcommand{\varMatrikelnr}{*** FEHLER: \textbackslash matrikelnr\{\} nicht gesetzt ***}
+\newcommand{\varStudiengang}{*** FEHLER: \textbackslash studiengang\{\} nicht gesetzt ***}
+\newcommand{\varHochschule}{*** FEHLER: \textbackslash hochschule\{\} nicht gesetzt ***}
 
 % Setzen der Variablen
 \newcommand{\erstbetreuer}[1]{\renewcommand{\varErstbetreuer}{#1}}
