@@ -12,6 +12,9 @@
 \usepackage{fancyhdr}
 \usepackage[a4paper]{geometry}
 
+\usepackage{epstopdf} % Import EPS Images
+\usepackage{setspace}
+
 
 %% by Martin
 
@@ -65,9 +68,12 @@
 
 \newcommand{\varErstbetreuer}{*** FEHLER: \textbackslash erstebetreuer\{\} nicht gesetzt ***}
 \newcommand{\varZweitbetreuer}{*** FEHLER: \textbackslash zweitbetreuer\{\} nicht gesetzt ***}
+\newcommand{\varMatrikelnr}{*** FEHLER: \textbackslash matrikelnummer\{\} nicht gesetzt ***}
+\newcommand{\varStudiengang}{*** FEHLER: \textbackslash Studiengang\{\} nicht gesetzt ***}
+\newcommand{\varHochschule}{*** FEHLER: \textbackslash Hochschule\{\} nicht gesetzt ***}
 
 \newcommand{\erstbetreuer}[1]{\renewcommand{\varErstbetreuer}{#1}}
 \newcommand{\zweitbetreuer}[1]{\renewcommand{\varZweitbetreuer}{#1}}
- 
-
-
+\newcommand{\matrikelnr}[1]{\renewcommand{\varMatrikelnr}{#1}} 
+\newcommand{\studiengang}[1]{\renewcommand{\varStudiengang}{#1}} 
+\newcommand{\hochschule}[1]{\renewcommand{\varHochschule}{#1}} 
