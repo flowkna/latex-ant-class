@@ -34,6 +34,9 @@
 % Ermöglicht das Überschreiben von sog. "Kernel-Commands" von Latex
 \usepackage{etoolbox}
 
+% Packet für bessere Randnotizen 
+\usepackage{marginnote} 
+
 % Mappen von Überschriften auf Labels 
 % Begin
 \LetLtxMacro{\origsection}{\section}
@@ -85,3 +88,12 @@
 \newcommand{\matrikelnr}[1]{\renewcommand{\varMatrikelnr}{#1}} 
 \newcommand{\studiengang}[1]{\renewcommand{\varStudiengang}{#1}} 
 \newcommand{\hochschule}[1]{\renewcommand{\varHochschule}{#1}} 
+
+
+
+%marginnote neu definieren, sodass automatisch der Abstand zw. Absätzen eingahalten wird 
+\LetLtxMacro{\origmarginnote}{\marginnote}
+\renewcommand{\marginnote}[2][]{
+  \origmarginnote[#1]{#2}[\parskip]
+}
+
