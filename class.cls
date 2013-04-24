@@ -1,5 +1,6 @@
 \ProvidesClass{class}[2013/04/08 v 0.1 class]
-\LoadClassWithOptions{article}
+
+\LoadClassWithOptions{scrreprt}
 
 % Setze Papiergröße auf A4
 \usepackage[a4paper]{geometry}
