@@ -36,7 +36,9 @@
 \usepackage{etoolbox}
 
 % Packet für bessere Randnotizen 
+%\usepackage[fulladjust]{marginnote} 
 \usepackage{marginnote} 
+
 
 % Automatische Labels für Überschriften 
 % Begin
@@ -89,6 +91,7 @@
 \newcommand{\varMatrikelnr}{*** FEHLER: \textbackslash matrikelnr\{\} nicht gesetzt ***}
 \newcommand{\varStudiengang}{*** FEHLER: \textbackslash studiengang\{\} nicht gesetzt ***}
 \newcommand{\varHochschule}{*** FEHLER: \textbackslash hochschule\{\} nicht gesetzt ***}
+\newcommand{\varProduktname}{*** FEHLER: \textbackslash produktname\{\} nicht gesetzt ***}
 
 % Setzen der Variablen
 \newcommand{\erstbetreuer}[1]{\renewcommand{\varErstbetreuer}{#1}}
@@ -96,7 +99,7 @@
 \newcommand{\matrikelnr}[1]{\renewcommand{\varMatrikelnr}{#1}} 
 \newcommand{\studiengang}[1]{\renewcommand{\varStudiengang}{#1}} 
 \newcommand{\hochschule}[1]{\renewcommand{\varHochschule}{#1}} 
-
+\newcommand{\produktname}[1]{\renewcommand{\varProduktname}{#1}} 
 
 
 %marginnote neu definieren, sodass automatisch der Abstand zw. Absätzen eingahalten wird 
