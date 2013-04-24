@@ -38,13 +38,20 @@
 % Packet für bessere Randnotizen 
 \usepackage{marginnote} 
 
-% Mappen von Überschriften auf Labels 
+% Automatische Labels für Überschriften 
 % Begin
+\LetLtxMacro{\origchapter}{\chapter}
+\renewcommand{\chapter}[2][]{
+  \ifstrempty{#1}{\origchapter{#2}}{\origchapter[#1]{#2}}  % only use optional arg if it is set 
+  \label{chapter:#2}
+  \ifstrempty{#1}{}{\label{chapter_short:#1}} % only set label for shortRef 
+}
+
 \LetLtxMacro{\origsection}{\section}
 \renewcommand{\section}[2][]{
   \ifstrempty{#1}{\origsection{#2}}{\origsection[#1]{#2}}  % only use optional arg if it is set 
   \label{section:#2}
-  \ifstrempty{#1}{}{\label{secShort:#1}} % only set label for shortRef 
+  \ifstrempty{#1}{}{\label{section_short:#1}} % only set label for shortRef 
 }
 %
 \LetLtxMacro{\origsubsection}{\subsection}
