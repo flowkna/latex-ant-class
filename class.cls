@@ -39,8 +39,18 @@
 %\usepackage[fulladjust]{marginnote} 
 \usepackage{marginnote} 
 
+% Paket um mehrere Seiten PDF zu importieren 
+\usepackage{pdfpages}
 
-% Automatische Labels für Überschriften 
+% für lange Tabellen
+\usepackage{longtable}
+\usepackage{multirow,array,booktabs}
+\usepackage{ragged2e}
+\usepackage{lscape}
+\usepackage{rotating}
+
+
+% Automatische Labels für Überschriften ---------------------------------
 % Begin
 \LetLtxMacro{\origchapter}{\chapter}
 \renewcommand{\chapter}[2][]{
