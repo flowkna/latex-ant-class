@@ -89,15 +89,22 @@
 \newcommand{\varErstbetreuer}{*** FEHLER: \textbackslash erstebetreuer\{\} nicht gesetzt ***}
 \newcommand{\varZweitbetreuer}{*** FEHLER: \textbackslash zweitbetreuer\{\} nicht gesetzt ***}
 \newcommand{\varMatrikelnr}{*** FEHLER: \textbackslash matrikelnr\{\} nicht gesetzt ***}
+\newcommand{\varAdresse}{*** FEHLER: \textbackslash adresse\{\} nicht gesetzt ***}
 \newcommand{\varStudiengang}{*** FEHLER: \textbackslash studiengang\{\} nicht gesetzt ***}
+\newcommand{\varFachbereich}{*** FEHLER: \textbackslash fachbereich\{\} nicht gesetzt ***}
 \newcommand{\varHochschule}{*** FEHLER: \textbackslash hochschule\{\} nicht gesetzt ***}
 \newcommand{\varProduktname}{*** FEHLER: \textbackslash produktname\{\} nicht gesetzt ***}
 
-% Setzen der Variablen
+
+
+
+% Komandos zum Setzen der Variablen
 \newcommand{\erstbetreuer}[1]{\renewcommand{\varErstbetreuer}{#1}}
 \newcommand{\zweitbetreuer}[1]{\renewcommand{\varZweitbetreuer}{#1}}
+\newcommand{\adresse}[1]{\renewcommand{\varAdresse}{#1}} 
 \newcommand{\matrikelnr}[1]{\renewcommand{\varMatrikelnr}{#1}} 
 \newcommand{\studiengang}[1]{\renewcommand{\varStudiengang}{#1}} 
+\newcommand{\fachbereich}[1]{\renewcommand{\varFachbereich}{#1}} 
 \newcommand{\hochschule}[1]{\renewcommand{\varHochschule}{#1}} 
 \newcommand{\produktname}[1]{\renewcommand{\varProduktname}{#1}} 
 
