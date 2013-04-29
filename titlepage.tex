@@ -8,27 +8,38 @@
 \begin{titlepage}
 
 \includegraphics[width=0.25\textwidth]{HTW_Logo_Grau}~\\[1cm]
-\vspace{2.7cm}
+
 \begin{center}
+Freie wissenschaftliche Arbeit zur Erlangung des akademischen Grades \\ Master of Science in \varStudiengang
+\vspace{2.7cm}
 
 % Title
-\setstretch{2.3} 
-{ \LARGE \thetitle}\\[0.8cm] 
-\singlespacing
-
 \hline
+\setstretch{1.8} 
+{ \LARGE \textbf{\thetitle}}\\[0.3cm] 
+\singlespacing
+\hline
+
 \vspace{0.7cm}
 
 \textsc{\Large Masterarbeit}
+
+im Fachbereich \varFachbereich \\ 
+im Studiengang \varStudiengang \\der \varHochschule
+
 \end{center}
 
-\vspace{5.7cm}
+\vspace{2.7cm}
 
 \begin{tabular}{l c l}
-  Erstellt von & : &  \theauthor \\
-  Matrikelnummer & : &  \varMatrikelnr \\
-  Studengang & : & \varStudiengang \\
-  Hochschule & : & \varHochschule \\
+  Erstellt von & : &  \parbox[t]{0.49\textwidth}{ \theauthor \\ 
+                                                  \varAdresse \\
+                                                  Matrikelnummer: \varMatrikelnr \\
+                      
+                       } \\
+%  Matrikelnummer & : & : \varMatrikelnr \\
+%  Studengang & : & \varStudiengang \\
+%  Hochschule & : & \varHochschule \\
   Erstbetreuer  & : & \varErstbetreuer \\
   Zweitbetreuer & : & \varZweitbetreuer \\ \\
   Eingereicht & : & \today
