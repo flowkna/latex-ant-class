@@ -49,6 +49,9 @@
 \usepackage{lscape}
 \usepackage{rotating}
 
+% einfache listen 
+\usepackage[sharp]{easylist}
+
 
 % Automatische Labels für Überschriften ---------------------------------
 % Begin
