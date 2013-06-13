@@ -128,3 +128,17 @@
   \origmarginnote[#1]{#2}[\parskip]
 }
 
+
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+%grafiken einfacher einbinden  mit \grafik{DATEINAME}{TITLE/CAPTION} 
+\newcommand{\grafik}[2]{
+  \begin{figure}[htb]
+    \centering
+    \includegraphics[width = \textwidth]{#1}
+    \setlength{\arrayrulewidth}{0.01cm}
+    \arrayrulecolor{gray}\hrule
+    \caption{#2}
+    \label{figure:#1}
+  \end{figure}
+}
