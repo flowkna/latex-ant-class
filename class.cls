@@ -35,7 +35,7 @@
 % Ermöglicht das Überschreiben von sog. "Kernel-Commands" von Latex
 \usepackage{etoolbox}
 
-% Packet für bessere Randnotizen 
+% Paket für bessere Randnotizen 
 %\usepackage[fulladjust]{marginnote} 
 \usepackage{marginnote} 
 
@@ -52,6 +52,8 @@
 % einfache listen 
 \usepackage[sharp]{easylist}
 
+% compactitem listen, sehen schöner aus als itemize
+\usepackage{paralist}
 
 % Automatische Labels für Überschriften ---------------------------------
 % Begin
