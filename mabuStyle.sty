@@ -38,3 +38,9 @@
 
 % Definiere den Höhen-Offset der Randnotizen
 \renewcommand*{\marginnotevadjust}{2pt}
+
+% Definiere Text für Tabellenumbruch
+\newcommand{\continiueNextPage}[1]{\multicolumn{#1}{|r|}{{\textit{weiter auf der nächsten Seite}}} \tabularnewline \hline}
+
+% Definiere Spaltenformatierung für zentrierte Spalten inklusive Angabe der Breite
+\newcolumntype{Z}[1]{>{\centering}p{#1}<{\centering}}
