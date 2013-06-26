@@ -1,4 +1,4 @@
-\ProvidesClass{class}[2013/04/08 v 0.1 class]
+\ProvidesClass{shared-resources/class}[2013/04/08 v 0.1 class]
 
 \LoadClassWithOptions{scrreprt}
 
@@ -48,9 +48,13 @@
 \usepackage{ragged2e}
 \usepackage{lscape}
 \usepackage{rotating}
+\usepackage{tabularx}
 
 % einfache listen 
 \usepackage[sharp]{easylist}
+
+% Formatierungen 
+\usepackage{soul}
 
 
 % Automatische Labels für Überschriften ---------------------------------
