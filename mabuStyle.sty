@@ -44,3 +44,11 @@
 
 % Definiere den Höhen-Offset der Randnotizen
 \renewcommand*{\marginnotevadjust}{2pt}
+% Caption überschreiben um automatisch zu formatieren
+\LetLtxMacro{\origcaption}{\caption}
+\renewcommand{\caption}[2][]{
+  \vspace{0.5cm}                                            % etwas platz oberhalb   
+  \textcolor{KinAppFarbe}{\hrule}                           % linie oberhalb
+  \ifstrempty{#1}{\origcaption{#2}}{\origcaption[#1]{#2}}   % caption ausgeben %only use optional arg if it is set 
+  \vspace{2cm}                                              % etwas platz unterhalb  
+}
