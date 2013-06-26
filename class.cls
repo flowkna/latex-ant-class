@@ -131,14 +131,26 @@
 
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 
-%grafiken einfacher einbinden  mit \grafik{DATEINAME}{TITLE/CAPTION} 
-\newcommand{\grafik}[2]{
+
+
+
+
+
+%grafiken einfacher einbinden  mit \grafik{DATEINAME}{caption kurz}{Qullenangabe für in cation}
+\newcommand{\grafik}[3]{
   \begin{figure}[htb]
     \centering
+    %\includegraphics[trim=1cm 2.5cm 1.5cm 1.5cm, clip=true, width = \textwidth]
+  %\fcolorbox{gray}{white}{
+  %scale=0.8
+    %etwas platz oberhalb  
+    \vspace{0.5cm}
+  
     \includegraphics[width = \textwidth]{#1}
-    \setlength{\arrayrulewidth}{0.01cm}
-    \arrayrulecolor{gray}\hrule
-    \caption{#2}
+  
+    \caption[#2]{#2 #3}
     \label{figure:#1}
+    
   \end{figure}
+  
 }
