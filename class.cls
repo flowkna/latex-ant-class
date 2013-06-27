@@ -104,6 +104,16 @@
 }
 % End
 
+% Definition fullref 
+\usepackage{shared-resources/substr}
+\newcommand{\fullref}[1]{%
+  \IfSubStringInString{chapter}{#1}{Kapitel \ref{#1}}{% else part - no chapter
+    \IfSubStringInString{figure}{#1}{Abbildung \ref{#1}}{% else part - no figure
+      \IfSubStringInString{table}{#1}{Tabelle \ref{#1}}{% else part - no table
+        Abschnitt \ref{#1}%
+}}}}
+
+
 % Definition von Variablen
 \newcommand{\varErstbetreuer}{*** FEHLER: \textbackslash erstebetreuer\{\} nicht gesetzt ***}
 \newcommand{\varZweitbetreuer}{*** FEHLER: \textbackslash zweitbetreuer\{\} nicht gesetzt ***}
