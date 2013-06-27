@@ -45,7 +45,6 @@
 % Definiere den Höhen-Offset der Randnotizen
 \renewcommand*{\marginnotevadjust}{2pt}
 
-
 % Caption überschreiben um automatisch zu formatieren
 \LetLtxMacro{\origcaption}{\caption}
 \renewcommand{\caption}[2][]{
@@ -60,4 +59,13 @@
 
 % Definiere Spaltenformatierung für zentrierte Spalten inklusive Angabe der Breite
 \newcolumntype{Z}[1]{>{\centering}p{#1}<{\centering}}
+
+% Definition von eigenen EasyList-Klassen mit individuellen Styles
+% Dokumentation ftp://ctan.tug.org/tex-archive/macros/latex/contrib/easylist/easylist-doc.pdf
+
+% Definition von einer Punkteliste (bulletlist) bist zu 5 Punkten
+
+\newcommand\numbers{\ListProperties(Space*=-12pt, Space=-8pt, Align=0.5cm, Margin=0.5cm, Margin2=1cm, Margin3=1.5cm, Margin4=2cm, Margin5=2.5cm, Hang=true, Style*=, Hide=0)}
+
+\newcommand\bullets{\ListProperties(Space*=-12pt, Space=-8pt, Align=0.5cm, Margin=0.5cm, Margin2=1cm, Margin3=1.5cm, Margin4=2cm, Margin5=2.5cm, Hang=true, Style*=\small$\bullet$ , Hide=5)}
 
