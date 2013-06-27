@@ -142,21 +142,18 @@
 
 
 
-%grafiken einfacher einbinden  mit \grafik{DATEINAME}{caption kurz}{Qullenangabe für in cation}
-\newcommand{\grafik}[3]{
+%grafiken einfacher einbinden  mit \grafik[grqphics optionen]{DATEINAME}{caption kurz}{caption erweiterung Qullenangabe für in cation}
+\newcommand{\grafik}[4][]{
   \begin{figure}[htb]
     \centering
-    %\includegraphics[trim=1cm 2.5cm 1.5cm 1.5cm, clip=true, width = \textwidth]
-  %\fcolorbox{gray}{white}{
-  %scale=0.8
     %etwas platz oberhalb  
     \vspace{0.5cm}
   
-    \includegraphics[width = \textwidth]{#1}
+    \ifstrempty{#1}{\includegraphics[width = \textwidth]{#2}}{\includegraphics[#1]{#2}}
   
-    \caption[#2]{#2 #3}
-    \label{figure:#1}
-    
+    \caption[#3]{#3 #4}
+    \label{figure:#2}
   \end{figure}
-  
 }
+
+
