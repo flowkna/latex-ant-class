@@ -54,11 +54,39 @@
   \vspace{2cm}                                              % etwas platz unterhalb  
 }
 
-% Definiere Text für Tabellenumbruch
-\newcommand{\continiueNextPage}[1]{\multicolumn{#1}{|r|}{{\textit{weiter auf der nächsten Seite}}} \tabularnewline \hline}
-
 % Definiere Spaltenformatierung für zentrierte Spalten inklusive Angabe der Breite
 \newcolumntype{Z}[1]{>{\centering}p{#1}<{\centering}}
+
+% Linienfarbe für Tabellen 
+\arrayrulecolor{KinAppFarbe}
+
+% unsere Longtable
+% usage: \begin{kinappLongtable} {caption}{Quelle oder leer}{Spaltenanzahl}{Spaltendefinition}{tabellenkopf}
+\newenvironment{kinappLongtable}[5]{
+\begin{longtable}{#4}
+
+    % \rowcolor{KinAppFarbe_Hell2}
+    \label{table:#1}
+    #5 
+    \tabularnewline \midrule \midrule
+    \endfirsthead
+
+    #5 
+    \tabularnewline \midrule
+    \endhead
+    
+    \multicolumn{#3}{r}{{\textit{weiter auf der nächsten Seite}}} \tabularnewline
+    \rowcolor{white} \caption[#1]{#1 #2} 
+    \endfoot
+    
+    \tabularnewline
+    \rowcolor{white} \caption[#1]{#1 #2} 
+    \endlastfoot
+    
+}{    
+\end{longtable}
+}
+
 
 % Definition von eigenen EasyList-Klassen mit individuellen Styles
 % Dokumentation ftp://ctan.tug.org/tex-archive/macros/latex/contrib/easylist/easylist-doc.pdf
