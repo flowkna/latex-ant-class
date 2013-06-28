@@ -150,7 +150,10 @@
 
 
 
-
+% quelle automatisch an cation anhängen
+\newcommand{\captionWithSource}[2]{
+    \caption[#1]{#1\ifstrempty{#2}{}{ (Quelle: #2)}}
+}
 
 %grafiken einfacher einbinden  mit \grafik[grqphics optionen]{DATEINAME}{caption kurz}{caption erweiterung Qullenangabe für in cation}
 \newcommand{\grafik}[4][]{
@@ -161,7 +164,7 @@
   
     \ifstrempty{#1}{\includegraphics[width = \textwidth]{#2}}{\includegraphics[#1]{#2}}
   
-    \caption[#3]{#3 #4}
+    \captionWithSource{#3}{#4}
     \label{figure:#2}
   \end{figure}
 }

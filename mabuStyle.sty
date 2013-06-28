@@ -45,13 +45,16 @@
 % Definiere den Höhen-Offset der Randnotizen
 \renewcommand*{\marginnotevadjust}{2pt}
 
+% caption formatieren
+\usepackage[font=small,format=plain,labelfont=bf,up,textfont=normal,up, nooneline, hang]{caption}
+
 % Caption überschreiben um automatisch zu formatieren
 \LetLtxMacro{\origcaption}{\caption}
 \renewcommand{\caption}[2][]{
-  \vspace{0.5cm}                                            % etwas platz oberhalb   
+  %\vspace{0.5cm}                                            % etwas platz oberhalb   
   \textcolor{KinAppFarbe}{\hrule}                           % linie oberhalb
   \ifstrempty{#1}{\origcaption{#2}}{\origcaption[#1]{#2}}   % caption ausgeben %only use optional arg if it is set 
-  \vspace{1cm}                                              % etwas platz unterhalb  
+  \vspace{0.5cm}                                              % etwas platz unterhalb  
 }
 
 % Definiere Spaltenformatierung für zentrierte Spalten inklusive Angabe der Breite
@@ -66,23 +69,22 @@
 \begin{longtable}{#4}
 
     % \rowcolor{KinAppFarbe_Hell2}
+    \captionWithSource{#1}{#2}
     \label{table:#1}
+    \vspace{1cm}
+    \tabularnewline
     #5 
     \tabularnewline \midrule \midrule
     \endfirsthead
-
+    
     #5 
     \tabularnewline \midrule
     \endhead
     
     \multicolumn{#3}{r}{{\textit{weiter auf der nächsten Seite}}} \tabularnewline
-    \rowcolor{white} \caption[#1]{#1 #2} 
     \endfoot
     
-    \tabularnewline
-    \rowcolor{white} \caption[#1]{#1 #2} 
     \endlastfoot
-    
 }{    
 \end{longtable}
 }
