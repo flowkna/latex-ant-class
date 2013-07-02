@@ -148,11 +148,32 @@
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 
 
+% Zitieren & Quellenangeban * * * * 
+
+\newboolean{varCiteInFootnote}
+\setboolean{varCiteInFootnote}{false}
+
+% \DeclareOption{foo}{\setboolean{varCiteInFootnote}{true}}
+
+
+\newcommand{\zitat}[1]{\glqq #1\grqq}
+
+\usepackage{cite}
+
+\LetLtxMacro{\origcite}{\cite}
+\renewcommand{\cite}[3][]{
+ \ifthenelse{\boolean{varCiteInFootnote}}{
+   \footnote{ \ifstrempty{#1}{siehe}{#1} \ifstrempty{#3}{\origcite{#2}}{\origcite[#3]{#2}}}
+ }{
+   \ifstrempty{#1}{siehe}{#1} \ifstrempty{#3}{\origcite{#2}}{\origcite[#3]{#2}}
+ }
+}
+
 
 
 % quelle automatisch an cation anhängen
 \newcommand{\captionWithSource}[2]{
-    \caption[#1]{#1\ifstrempty{#2}{}{ (Quelle: #2)}}
+    \caption[#1]{#1\ifstrempty{#2}{}{\ifthenelse{\boolean{varCiteInFootnote}}{#2}{ (Quelle: #2)}}}
 }
 
 %grafiken einfacher einbinden  mit \grafik[grqphics optionen]{DATEINAME}{caption kurz}{caption erweiterung Qullenangabe für in cation}
