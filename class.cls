@@ -62,6 +62,9 @@
 % Bilder können somit in den Text "inline" eingebettet werden
 \usepackage{float}
 
+% Für Multispalten
+\usepackage{multicol}
+
 % Automatische Labels für Überschriften ---------------------------------
 % Begin
 \LetLtxMacro{\origchapter}{\chapter}
