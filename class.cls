@@ -59,6 +59,9 @@
 % compactitem listen, sehen schöner aus als itemize
 \usepackage{paralist}
 
+% Bilder können somit in den Text "inline" eingebettet werden
+\usepackage{float}
+
 % Automatische Labels für Überschriften ---------------------------------
 % Begin
 \LetLtxMacro{\origchapter}{\chapter}
@@ -157,7 +160,8 @@
 
 %grafiken einfacher einbinden  mit \grafik[grqphics optionen]{DATEINAME}{caption kurz}{caption erweiterung Qullenangabe für in cation}
 \newcommand{\grafik}[4][]{
-  \begin{figure}[htb]
+  %\begin{figure}[htb]
+    \begin{figure}[H]
     \centering
     %etwas platz oberhalb  
     \vspace{0.5cm}
