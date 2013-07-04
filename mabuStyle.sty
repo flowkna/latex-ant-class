@@ -55,7 +55,7 @@
 \LetLtxMacro{\origcaption}{\caption}
 \renewcommand{\caption}[2][]{
   %\vspace{0.5cm}                                            % etwas platz oberhalb   
-  \textcolor{HintergrundFarbe_DunkelGrau}{\hrule}                           % linie oberhalb
+  \textcolor{HintergrundFarbe_HellGrau}{\hrule}                           % linie oberhalb
   \ifstrempty{#1}{\origcaption{#2}}{\origcaption[#1]{#2}}   % caption ausgeben %only use optional arg if it is set 
   \vspace{0.5cm}                                              % etwas platz unterhalb  
 }
@@ -64,7 +64,7 @@
 \newcolumntype{Z}[1]{>{\centering}p{#1}<{\centering}}
 
 % Linienfarbe für Tabellen 
-\arrayrulecolor{KinAppFarbe}
+\arrayrulecolor{HintergrundFarbe_HellGrau}
 
 % unsere Longtable
 % usage: \begin{kinappLongtable} {caption}{Quelle oder leer}{Spaltenanzahl}{Spaltendefinition}{tabellenkopf}
@@ -101,6 +101,8 @@
 \newcommand\numbers{\ListProperties(Space*=-12pt, Space=-8pt, Align=0.5cm, Margin=0.5cm, Margin2=1cm, Margin3=1.5cm, Margin4=2cm, Margin5=2.5cm, Hang=true, Style*=, Hide=0)}
 
 \newcommand\bullets{\ListProperties(Space*=-12pt, Space=-8pt, Align=0.5cm, Margin=0.5cm, Margin2=1cm, Margin3=1.5cm, Margin4=2cm, Margin5=2.5cm, Hang=true, Style*=\small$\bullet$ , Hide=5)}
+
+\newcommand\bulletsForTable{\ListProperties(Space*=0pt, Space=0pt, Align=0.4cm, Margin=0.2cm, Margin2=0.6cm, Margin3=1cm, Margin4=1.4cm, Margin5=2cm, Hang=true, Style*=\footnotesize$\bullet$ , Hide=5)}
 
 \LetLtxMacro{\origeasylist}{\easylist}
 \renewcommand{\easylist}{\vspace{6pt}\origeasylist}

@@ -189,7 +189,7 @@
     \ifstrempty{#1}{\includegraphics[width = \textwidth]{#2}}{\includegraphics[#1]{#2}}
   
     \captionWithSource{#3}{#4}
-    \label{figure:#2}
+         \label{figure:#2}
   \end{figure}
 }
 
