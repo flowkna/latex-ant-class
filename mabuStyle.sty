@@ -111,3 +111,8 @@
 
 \LetLtxMacro{\origeasylist}{\easylist}
 \renewcommand{\easylist}{\vspace{6pt}\origeasylist}
+
+
+% automatisch ein Leerzeich in der Fußnote
+\LetLtxMacro{\origfootnote}{\footnote}
+\renewcommand{\footnote}[1]{\origfootnote{ #1}}
