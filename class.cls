@@ -62,6 +62,9 @@
 % Bilder können somit in den Text "inline" eingebettet werden
 \usepackage{float}
 
+% Für Multispalten
+\usepackage{multicol}
+
 % Automatische Labels für Überschriften ---------------------------------
 % Begin
 \LetLtxMacro{\origchapter}{\chapter}
@@ -167,13 +170,9 @@
 \usepackage{cite}
 
 \LetLtxMacro{\origcite}{\cite}
-\renewcommand{\cite}[3][]{
- \ifthenelse{\boolean{varCiteInFootnote}}{
-   \footnote{ \ifstrempty{#1}{siehe}{#1} \ifstrempty{#3}{\origcite{#2}}{\origcite[#3]{#2}}}
- }{
-   \ifstrempty{#1}{siehe}{#1} \ifstrempty{#3}{\origcite{#2}}{\origcite[#3]{#2}}
- }
-}
+\renewcommand{\cite}[3][]{\ifthenelse{\boolean{varCiteInFootnote}}
+{\footnote{\ifstrempty{#1}{siehe}{#1}\ifstrempty{#3}{\origcite{#2}}{\origcite[#3]{#2}}}}
+{\ifstrempty{#1}{siehe}{#1}\ifstrempty{#3}{\origcite{#2}}{\origcite[#3]{#2}}}}
 
 
 
@@ -182,7 +181,7 @@
     \caption[#1]{#1\ifstrempty{#2}{}{\ifthenelse{\boolean{varCiteInFootnote}}{#2}{ (Quelle: #2)}}}
 }
 
-%grafiken einfacher einbinden  mit \grafik[grqphics optionen]{DATEINAME}{caption kurz}{caption erweiterung Qullenangabe für in cation}
+%grafiken einfacher einbinden  mit \grafik[grqphics optionen]{DATEINAME}{caption kurz}{caption Erweiterung Quellenangabe für in cation}
 \newcommand{\grafik}[4][]{
   %\begin{figure}[htb]
     \begin{figure}[H]
@@ -193,11 +192,13 @@
     \ifstrempty{#1}{\includegraphics[width = \textwidth]{#2}}{\includegraphics[#1]{#2}}
   
     \captionWithSource{#3}{#4}
-    \label{figure:#2}
+         \label{figure:#2}
   \end{figure}
 }
 
 % Lorem ipsum Text für Test's 
 \newcommand{\lorem}{Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.}
 
-
+% Inline Todos
+% Usage: \todo{kommentar einfügen}
+\newcommand{\todo}[1]{}

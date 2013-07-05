@@ -1,10 +1,13 @@
 \ProvidesPackage{mabuStyle}[2013/04/08 v0.1 style]
 % Farben definieren 
-\definecolor{KinAppFarbe}{rgb}{0.31,0.66,0.54}
-\definecolor{KinAppFarbe_Hell1}{rgb}{0.7490, 0.8823, 0.8431}
-\definecolor{KinAppFarbe_Hell2}{rgb}{0.8745, 0.9412, 0.9216}
-\definecolor{KinAppFarbe_Hell3}{rgb}{0.9373, 0.9725, 0.9608}
-\definecolor{HintergrundFarbe_HellGrau}{rgb}{0.95, 0.95, 0.95}
+\definecolor{KinAppFarbe}{RGB}{79, 169, 137}
+
+\definecolor{KinAppFarbe_Hell1}{RGB}{191, 225, 215}
+\definecolor{KinAppFarbe_Hell2}{RGB}{223, 240, 235}
+\definecolor{KinAppFarbe_Hell3}{RGB}{239, 248, 245}
+
+\definecolor{HintergrundFarbe_HellGrau}{RGB}{204, 204, 204}
+\definecolor{HintergrundFarbe_DunkelGrau}{RGB}{76, 76, 76}
 
 % Setze Zeilenabstand auf 1,3 
 \linespread{1.3}
@@ -52,7 +55,7 @@
 \LetLtxMacro{\origcaption}{\caption}
 \renewcommand{\caption}[2][]{
   %\vspace{0.5cm}                                            % etwas platz oberhalb   
-  \textcolor{KinAppFarbe}{\hrule}                           % linie oberhalb
+  \textcolor{HintergrundFarbe_HellGrau}{\hrule}                           % linie oberhalb
   \ifstrempty{#1}{\origcaption{#2}}{\origcaption[#1]{#2}}   % caption ausgeben %only use optional arg if it is set 
   \vspace{0.5cm}                                              % etwas platz unterhalb  
 }
@@ -69,14 +72,14 @@
 
 
 % Linienfarbe für Tabellen 
-\arrayrulecolor{KinAppFarbe}
+\arrayrulecolor{HintergrundFarbe_HellGrau}
 
 % unsere Longtable
 % usage: \begin{kinappLongtable} {caption}{Quelle oder leer}{Spaltenanzahl}{Spaltendefinition}{tabellenkopf}
 \newenvironment{kinappLongtable}[5]{
 \begin{longtable}{#4}
 
-    % \rowcolor{KinAppFarbe_Hell2}
+    % \rowcolor{HintergrundFarbe_DunkelGrau}
     \captionWithSource{#1}{#2}
     \label{table:#1}
     \vspace{1cm}
@@ -109,6 +112,8 @@
 
 \newcommand\bullets{\ListProperties(Space*=-12pt, Space=-8pt, Align=0.5cm, Margin=0.5cm, Margin2=1cm, Margin3=1.5cm, Margin4=2cm, Margin5=2.5cm, Hang=true, Style*=\small$\bullet$ , Hide=5)}
 
+\newcommand\bulletsForTable{\ListProperties(Space*=0pt, Space=0pt, Align=0.4cm, Margin=0.2cm, Margin2=0.6cm, Margin3=1cm, Margin4=1.4cm, Margin5=2cm, Hang=true, Style*=\footnotesize$\bullet$ , Hide=5)}
+
 \LetLtxMacro{\origeasylist}{\easylist}
 \renewcommand{\easylist}{\vspace{6pt}\origeasylist}
 
@@ -116,3 +121,4 @@
 % automatisch ein Leerzeich in der Fußnote
 \LetLtxMacro{\origfootnote}{\footnote}
 \renewcommand{\footnote}[1]{\origfootnote{ #1}}
+\renewcommand{\easylist}{\vspace{6pt}\origeasylist [enumerate]}
