@@ -113,11 +113,14 @@
 % Definition fullref 
 \usepackage{shared-resources/substr}
 \newcommand{\fullref}[1]{%
+\textit{%
   \IfSubStringInString{chapter}{#1}{Kapitel \ref{#1}}{% else part - no chapter
     \IfSubStringInString{figure}{#1}{Abbildung \ref{#1}}{% else part - no figure
       \IfSubStringInString{table}{#1}{Tabelle \ref{#1}}{% else part - no table
-        Abschnitt \ref{#1}%
-}}}}
+        Abschnitt~\ref{#1}%
+}}}%
+, S.~\pageref{#1}
+}}
 
 
 % Definition von Variablen
