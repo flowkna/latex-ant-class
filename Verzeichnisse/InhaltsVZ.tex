@@ -1,1 +1,16 @@
+\newcounter{romanPages}
+\pagenumbering{Roman}
+\setcounter{page}{1}    % pages i-v
+\pagestyle{plain}       % only display page numbers (no headings)
+
+
 \tableofcontents
+\setcounter{romanPages}{\value{page}+1}
+
+% Start counting
+\clearpage      
+
+\pagenumbering{arabic}
+\setcounter{page}{1}    % Executive Summary starts on page 1
+\pagestyle{fancy}
+
