@@ -136,7 +136,7 @@
 
 
 
-% Komandos zum Setzen der Variablen
+% Kommandos zum Setzen der Variablen
 \newcommand{\erstbetreuer}[1]{\renewcommand{\varErstbetreuer}{#1}}
 \newcommand{\zweitbetreuer}[1]{\renewcommand{\varZweitbetreuer}{#1}}
 \newcommand{\adresse}[1]{\renewcommand{\varAdresse}{#1}} 
@@ -201,6 +201,6 @@
 % Lorem ipsum Text für Test's 
 \newcommand{\lorem}{Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.}
 
-% Inline Todos
-% Usage: \todo{kommentar einfügen}
-%\newcommand{\todo}[1]{}
+% Standard-Pfad zur BibTex-Library
+\newcommand{\varBibTexLib}{*** FEHLER: \textbackslash BibTex Library\{\} nicht gesetzt ***}
+\newcommand{\bibTexLib}[1]{\renewcommand{\varBibTexLib}{#1}} 
