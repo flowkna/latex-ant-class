@@ -156,6 +156,8 @@
 
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 
+% todonotes
+\usepackage{todonotes}
 
 % Zitieren & Quellenangeban * * * * 
 
@@ -201,4 +203,4 @@
 
 % Inline Todos
 % Usage: \todo{kommentar einfügen}
-\newcommand{\todo}[1]{}
+%\newcommand{\todo}[1]{}
