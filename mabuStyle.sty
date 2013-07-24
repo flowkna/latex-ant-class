@@ -121,7 +121,13 @@
 \renewcommand{\easylist}{\vspace{6pt}\origeasylist}
 
 
-% automatisch ein Leerzeich in der Fußnote
+% automatisch ein Leerzeichen in der Fußnote
 \LetLtxMacro{\origfootnote}{\footnote}
 \renewcommand{\footnote}[1]{\origfootnote{ #1}}
 \renewcommand{\easylist}{\vspace{6pt}\origeasylist [enumerate]}
+
+
+%If the text within the footnote is very long, LaTeX may split the footnote over several pages. You can prevent LaTeX from doing so by increasing the penalty for such an operation. To do this, insert the following line into the preamble of your document:
+%https://en.wikibooks.org/wiki/LaTeX/Footnotes_and_Margin_Notes
+\interfootnotelinepenalty=10000
+
