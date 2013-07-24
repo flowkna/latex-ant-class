@@ -132,8 +132,7 @@
 \newcommand{\varFachbereich}{*** FEHLER: \textbackslash fachbereich\{\} nicht gesetzt ***}
 \newcommand{\varHochschule}{*** FEHLER: \textbackslash hochschule\{\} nicht gesetzt ***}
 \newcommand{\varProduktname}{*** FEHLER: \textbackslash produktname\{\} nicht gesetzt ***}
-
-
+\newcommand{\varProduktnameOhneLeer}{*** FEHLER: \textbackslash produktnameOhneLeer\{\} nicht gesetzt ***}
 
 
 % Kommandos zum Setzen der Variablen
@@ -145,7 +144,7 @@
 \newcommand{\fachbereich}[1]{\renewcommand{\varFachbereich}{#1}} 
 \newcommand{\hochschule}[1]{\renewcommand{\varHochschule}{#1}} 
 \newcommand{\produktname}[1]{\renewcommand{\varProduktname}{#1}} 
-
+\newcommand{\produktnameOhneLeer}[1]{\renewcommand{\varProduktnameOhneLeer}{#1}} 
 
 %marginnote neu definieren, sodass automatisch der Abstand zw. Absätzen eingahalten wird 
 \LetLtxMacro{\origmarginnote}{\marginnote}
