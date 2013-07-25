@@ -166,7 +166,7 @@
 % \DeclareOption{foo}{\setboolean{varCiteInFootnote}{true}}
 
 
-\newcommand{\zitat}[1]{\glqq #1\grqq}
+\newcommand{\zitat}[1]{\glqq\textit{#1}\grqq}
 
 \usepackage{cite}
 
