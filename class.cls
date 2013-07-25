@@ -1,6 +1,7 @@
 \ProvidesClass{shared-resources/class}[2013/04/08 v 0.1 class]
 
-\LoadClassWithOptions{scrreprt}
+\LoadClass[listof=totoc]{scrreprt}
+
 
 % Setze Papiergröße auf A4
 \usepackage[a4paper]{geometry}
@@ -67,12 +68,12 @@
 
 % Automatische Labels für Überschriften ---------------------------------
 % Begin
-\LetLtxMacro{\origchapter}{\chapter}
-\renewcommand{\chapter}[2][]{
-  \ifstrempty{#1}{\origchapter{#2}}{\origchapter[#1]{#2}}  % only use optional arg if it is set 
-  \label{chapter:#2}
-  \ifstrempty{#1}{}{\label{chapter_short:#1}} % only set label for shortRef 
-}
+%%\LetLtxMacro{\origchapter}{\chapter}
+%%\renewcommand{\chapter}[2][]{
+%%  \ifstrempty{#1}{\origchapter{#2}}{\origchapter[#1]{#2}}  % only use optional arg if it is set 
+%%  \label{chapter:#2}
+%%  \ifstrempty{#1}{}{\label{chapter_short:#1}} % only set label for shortRef 
+%%}
 
 \LetLtxMacro{\origsection}{\section}
 \renewcommand{\section}[2][]{
@@ -95,19 +96,19 @@
   \ifstrempty{#1}{}{\label{subsubsection_short:#1}} % only set label for shortRef 
 }
 %
-\LetLtxMacro{\origparagraph}{\paragraph}
-\renewcommand{\paragraph}[2][]{
-  \ifstrempty{#1}{\origparagraph{#2}}{\origparagraph[#1]{#2}}  % only use optional arg if it is set 
-  \label{paragraph:#2}
-  \ifstrempty{#1}{}{\label{paragraph_short:#1}} % only set label for shortRef 
-}
+%\LetLtxMacro{\origparagraph}{\paragraph}
+%\renewcommand{\paragraph}[2][]{
+%  \ifstrempty{#1}{\origparagraph{#2}}{\origparagraph[#1]{#2}}  % only use optional arg if it is set 
+%  \label{paragraph:#2}
+%  \ifstrempty{#1}{}{\label{paragraph_short:#1}} % only set label for shortRef 
+%}
 %
-\LetLtxMacro{\origsubparagraph}{\subparagraph}
-\renewcommand{\subparagraph}[2][]{
-  \ifstrempty{#1}{\origsubparagraph{#2}}{\origsubparagraph[#1]{#2}}  % only use optional arg if it is set 
-  \label{subparagraph:#2}
-  \ifstrempty{#1}{}{\label{subparagraph_short:#1}} % only set label for shortRef 
-}
+%\LetLtxMacro{\origsubparagraph}{\subparagraph}
+%\renewcommand{\subparagraph}[2][]{
+%  \ifstrempty{#1}{\origsubparagraph{#2}}{\origsubparagraph[#1]{#2}}  % only use optional arg if it is set 
+%  \label{subparagraph:#2}
+%  \ifstrempty{#1}{}{\label{subparagraph_short:#1}} % only set label for shortRef 
+%}
 % End
 
 % Definition fullref 

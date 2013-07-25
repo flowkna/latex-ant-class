@@ -1,11 +1,13 @@
 \newcounter{romanPages}
-\pagenumbering{Roman}
+\pagenumbering{roman}
 \setcounter{page}{1}    % pages i-v
 \pagestyle{plain}       % only display page numbers (no headings)
 
 
 \tableofcontents
-\setcounter{romanPages}{\value{page}+1}
+
+ \setcounter{romanPages}{\value{page}+1}
+
 
 % Start counting
 \clearpage      
