@@ -205,3 +205,8 @@
 % Inline Todos
 % Usage: \todo{kommentar einfügen}
 %\newcommand{\todo}[1]{}
+
+\usepackage{glossaries}
+
+\usepackage[printonlyused,withpage]{acronym}
+
