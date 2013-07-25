@@ -112,14 +112,14 @@
 
 % Definition fullref 
 \usepackage{shared-resources/substr}
-\newcommand{\fullref}[1]{%
+\newcommand{\fullref}[2][]{%
 \textit{%
-  \IfSubStringInString{chapter}{#1}{Kapitel \ref{#1}}{% else part - no chapter
-    \IfSubStringInString{figure}{#1}{Abbildung \ref{#1}}{% else part - no figure
-      \IfSubStringInString{table}{#1}{Tabelle \ref{#1}}{% else part - no table
-        Abschnitt~\ref{#1}%
+  \IfSubStringInString{chapter}{#2}{Kapitel \ref{#2}}{% else part - no chapter
+    \IfSubStringInString{figure}{#2}{Abbildung \ref{#2}}{% else part - no figure
+      \IfSubStringInString{table}{#2}{Tabelle \ref{#2}}{% else part - no table
+        Abschnitt~\ref{#2}%
 }}}%
-, S.~\pageref{#1}
+\IfSubStringInString{withPage}{#1}{, S.~\pageref{#2}}{}%no else
 }}
 
 
