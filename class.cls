@@ -133,11 +133,10 @@
 \newcommand{\varFachbereich}{*** FEHLER: \textbackslash fachbereich\{\} nicht gesetzt ***}
 \newcommand{\varHochschule}{*** FEHLER: \textbackslash hochschule\{\} nicht gesetzt ***}
 \newcommand{\varProduktname}{*** FEHLER: \textbackslash produktname\{\} nicht gesetzt ***}
+\newcommand{\varProduktnameOhneLeer}{*** FEHLER: \textbackslash produktnameOhneLeer\{\} nicht gesetzt ***}
 
 
-
-
-% Komandos zum Setzen der Variablen
+% Kommandos zum Setzen der Variablen
 \newcommand{\erstbetreuer}[1]{\renewcommand{\varErstbetreuer}{#1}}
 \newcommand{\zweitbetreuer}[1]{\renewcommand{\varZweitbetreuer}{#1}}
 \newcommand{\adresse}[1]{\renewcommand{\varAdresse}{#1}} 
@@ -146,7 +145,7 @@
 \newcommand{\fachbereich}[1]{\renewcommand{\varFachbereich}{#1}} 
 \newcommand{\hochschule}[1]{\renewcommand{\varHochschule}{#1}} 
 \newcommand{\produktname}[1]{\renewcommand{\varProduktname}{#1}} 
-
+\newcommand{\produktnameOhneLeer}[1]{\renewcommand{\varProduktnameOhneLeer}{#1}} 
 
 %marginnote neu definieren, sodass automatisch der Abstand zw. Absätzen eingahalten wird 
 \LetLtxMacro{\origmarginnote}{\marginnote}
@@ -168,7 +167,7 @@
 % \DeclareOption{foo}{\setboolean{varCiteInFootnote}{true}}
 
 
-\newcommand{\zitat}[1]{\glqq #1\grqq}
+\newcommand{\zitat}[1]{\glqq\textit{#1}\grqq}
 
 \usepackage{cite}
 
@@ -210,3 +209,6 @@
 
 \usepackage[printonlyused,withpage]{acronym}
 
+% Standard-Pfad zur BibTex-Library
+\newcommand{\varBibTexLib}{*** FEHLER: \textbackslash BibTex Library\{\} nicht gesetzt ***}
+\newcommand{\bibTexLib}[1]{\renewcommand{\varBibTexLib}{#1}} 

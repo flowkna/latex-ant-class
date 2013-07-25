@@ -64,6 +64,7 @@
 }
 
 % Definiere Spaltenformatierung für zentrierte Spalten inklusive Angabe der Breite
+%\newcolumntype{Z}[1]{>{\centering}p{#1}<{\centering}}
 \newcolumntype{Z}[1]{>{\centering}p{#1}<{\centering}}
 
 % Definiere Spaltenformatierung für zentrierte Spalten inklusive Angabe der Breite
@@ -71,8 +72,6 @@
 
 % Definiere Spaltenformatierung für zentrierte Spalten inklusive Angabe der Breite
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
-
-
 
 % Linienfarbe für Tabellen 
 \arrayrulecolor{HintergrundFarbe_HellGrau}
@@ -109,7 +108,7 @@
 % Definition von eigenen EasyList-Klassen mit individuellen Styles
 % Dokumentation ftp://ctan.tug.org/tex-archive/macros/latex/contrib/easylist/easylist-doc.pdf
 
-% Definition von einer Punkteliste (bulletlist) bist zu 5 Punkten
+% Definition von einer Punkteliste (bulletlist) bis zu 5 Punkten
 
 \newcommand\numbers{\ListProperties(Space*=-12pt, Space=-8pt, Align=0.5cm, Margin=0.5cm, Margin2=1cm, Margin3=1.5cm, Margin4=2cm, Margin5=2.5cm, Hang=true, Style*=, Hide=0)}
 
@@ -120,8 +119,12 @@
 \LetLtxMacro{\origeasylist}{\easylist}
 \renewcommand{\easylist}{\vspace{6pt}\origeasylist}
 
-
-% automatisch ein Leerzeich in der Fußnote
+% automatisch ein Leerzeichen in der Fußnote
 \LetLtxMacro{\origfootnote}{\footnote}
 \renewcommand{\footnote}[1]{\origfootnote{ #1}}
 \renewcommand{\easylist}{\vspace{6pt}\origeasylist [enumerate]}
+
+%If the text within the footnote is very long, LaTeX may split the footnote over several pages. You can prevent LaTeX from doing so by increasing the penalty for such an operation. To do this, insert the following line into the preamble of your document:
+%https://en.wikibooks.org/wiki/LaTeX/Footnotes_and_Margin_Notes
+\interfootnotelinepenalty=10000
+
