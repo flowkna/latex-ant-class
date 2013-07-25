@@ -1,9 +1,12 @@
-\pagenumbering{Roman}
-\setcounter{page}{\value{romanPages}}    
 % \pagestyle{plain}       % only display page numbers (no headings)
 
-\listoffigures						% Abbildungsverzeichnis
-\newpage
+
+% \cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
 
 
-\setcounter{romanPages}{\value{page}}
+%\newpage
+
+

@@ -1,6 +1,7 @@
 \ProvidesClass{shared-resources/class}[2013/04/08 v 0.1 class]
 
-\LoadClassWithOptions{scrreprt}
+\LoadClass[listof=totoc]{scrreprt}
+
 
 % Setze Papiergröße auf A4
 \usepackage[a4paper]{geometry}
@@ -67,12 +68,12 @@
 
 % Automatische Labels für Überschriften ---------------------------------
 % Begin
-\LetLtxMacro{\origchapter}{\chapter}
-\renewcommand{\chapter}[2][]{
-  \ifstrempty{#1}{\origchapter{#2}}{\origchapter[#1]{#2}}  % only use optional arg if it is set 
-  \label{chapter:#2}
-  \ifstrempty{#1}{}{\label{chapter_short:#1}} % only set label for shortRef 
-}
+%%\LetLtxMacro{\origchapter}{\chapter}
+%%\renewcommand{\chapter}[2][]{
+%%  \ifstrempty{#1}{\origchapter{#2}}{\origchapter[#1]{#2}}  % only use optional arg if it is set 
+%%  \label{chapter:#2}
+%%  \ifstrempty{#1}{}{\label{chapter_short:#1}} % only set label for shortRef 
+%%}
 
 \LetLtxMacro{\origsection}{\section}
 \renewcommand{\section}[2][]{
@@ -95,31 +96,31 @@
   \ifstrempty{#1}{}{\label{subsubsection_short:#1}} % only set label for shortRef 
 }
 %
-\LetLtxMacro{\origparagraph}{\paragraph}
-\renewcommand{\paragraph}[2][]{
-  \ifstrempty{#1}{\origparagraph{#2}}{\origparagraph[#1]{#2}}  % only use optional arg if it is set 
-  \label{paragraph:#2}
-  \ifstrempty{#1}{}{\label{paragraph_short:#1}} % only set label for shortRef 
-}
+%\LetLtxMacro{\origparagraph}{\paragraph}
+%\renewcommand{\paragraph}[2][]{
+%  \ifstrempty{#1}{\origparagraph{#2}}{\origparagraph[#1]{#2}}  % only use optional arg if it is set 
+%  \label{paragraph:#2}
+%  \ifstrempty{#1}{}{\label{paragraph_short:#1}} % only set label for shortRef 
+%}
 %
-\LetLtxMacro{\origsubparagraph}{\subparagraph}
-\renewcommand{\subparagraph}[2][]{
-  \ifstrempty{#1}{\origsubparagraph{#2}}{\origsubparagraph[#1]{#2}}  % only use optional arg if it is set 
-  \label{subparagraph:#2}
-  \ifstrempty{#1}{}{\label{subparagraph_short:#1}} % only set label for shortRef 
-}
+%\LetLtxMacro{\origsubparagraph}{\subparagraph}
+%\renewcommand{\subparagraph}[2][]{
+%  \ifstrempty{#1}{\origsubparagraph{#2}}{\origsubparagraph[#1]{#2}}  % only use optional arg if it is set 
+%  \label{subparagraph:#2}
+%  \ifstrempty{#1}{}{\label{subparagraph_short:#1}} % only set label for shortRef 
+%}
 % End
 
 % Definition fullref 
 \usepackage{shared-resources/substr}
-\newcommand{\fullref}[1]{%
+\newcommand{\fullref}[2][]{%
 \textit{%
-  \IfSubStringInString{chapter}{#1}{Kapitel \ref{#1}}{% else part - no chapter
-    \IfSubStringInString{figure}{#1}{Abbildung \ref{#1}}{% else part - no figure
-      \IfSubStringInString{table}{#1}{Tabelle \ref{#1}}{% else part - no table
-        Abschnitt~\ref{#1}%
+  \IfSubStringInString{chapter}{#2}{Kapitel \ref{#2}}{% else part - no chapter
+    \IfSubStringInString{figure}{#2}{Abbildung \ref{#2}}{% else part - no figure
+      \IfSubStringInString{table}{#2}{Tabelle \ref{#2}}{% else part - no table
+        Abschnitt~\ref{#2}%
 }}}%
-, S.~\pageref{#1}
+\IfSubStringInString{withPage}{#1}{, S.~\pageref{#2}}{}%no else
 }}
 
 
@@ -199,6 +200,14 @@
 
 % Lorem ipsum Text für Test's 
 \newcommand{\lorem}{Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.}
+
+% Inline Todos
+% Usage: \todo{kommentar einfügen}
+%\newcommand{\todo}[1]{}
+
+\usepackage{glossaries}
+
+\usepackage[printonlyused,withpage]{acronym}
 
 % Standard-Pfad zur BibTex-Library
 \newcommand{\varBibTexLib}{*** FEHLER: \textbackslash BibTex Library\{\} nicht gesetzt ***}
