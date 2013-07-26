@@ -127,3 +127,10 @@
 %https://en.wikibooks.org/wiki/LaTeX/Footnotes_and_Margin_Notes
 \interfootnotelinepenalty=10000
 
+
+% todonotes
+%\usepackage[colorinlistoftodos, ngerman, textsize=small, backgroundcolor=KinAppFarbe_Hell2, linecolor=KinAppFarbe, bordercolor=KinAppFarbe]{todonotes}
+\usepackage[colorinlistoftodos, ngerman, textsize=small]{todonotes}
+
+% fixme notes mit automatischen Todos
+\newcommand{\fixme}[2][]{\textcolor{purple}{\textit{#2}}\todo{fix me\ifstrempty{#1}{}{: #1}}}
