@@ -136,6 +136,8 @@
 \newcommand{\fixme}[2][]{\textcolor{purple}{\textit{#2}}\todo{fix me\ifstrempty{#1}{}{: #1}}}
 
 
+% Fußnoten werden über Chaptergrenzen hinaus gezählt
+\counterwithout{footnote}{chapter}
 
 % Bibliography natbib - um Literaturangaben und -verzeichnis anzupassen. 
 \usepackage[comma,sort&compress]{natbib}

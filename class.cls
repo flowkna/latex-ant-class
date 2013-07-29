@@ -66,6 +66,10 @@
 % Für Multispalten
 \usepackage{multicol}
 
+% Paket um Fußnoten durchgängig zählen zu können
+% In mabuStyles wurde entsprechende Option aktiviert
+\usepackage{chngcntr}
+
 % Automatische Labels für Überschriften ---------------------------------
 % Begin
 %%\LetLtxMacro{\origchapter}{\chapter}
